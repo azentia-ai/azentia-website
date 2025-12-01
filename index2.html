@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Aentia.ai - Leading AI-powered solutions and IT services provider. Transform your business with intelligent automation, machine learning, and cutting-edge technology services.">
+    <meta name="keywords"
+        content="AI solutions, artificial intelligence, IT services, machine learning, AI consulting, temple management system, Mydhilyam, AI development, cloud services, data analytics">
+    <meta name="author" content="Aentia.ai">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Aentia.ai - AI-Powered Innovation & IT Services">
+    <meta property="og:description"
+        content="Transform your business with cutting-edge AI solutions and intelligent IT services. Expert AI consulting, custom development, and innovative products.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aentia.ai">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aentia.ai - AI-Powered Innovation">
+    <meta name="twitter:description"
+        content="Leading AI solutions and IT services provider helping businesses transform with intelligent technology.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://aentia.ai">
+
+    <title>Aentia.ai - AI Solutions & IT Services | Transform Your Business with AI</title>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Aentia.ai",
+      "description": "AI-powered solutions and IT services provider",
+      "url": "https://aentia.ai",
+      "logo": "https://aentia.ai/logo.png",
+      "sameAs": [
+        "https://linkedin.com/company/aentia-ai",
+        "https://twitter.com/aentiaai"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@aentia.ai",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ffffff;
+            --secondary: #e5e5e5;
+            --accent: #d1d1d1;
+            --dark: #000000;
+            --dark-card: #0a0a0a;
+            --text: #ffffff;
+            --text-dim: #a3a3a3;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.15;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        header.scrolled {
+            padding: 1rem 5%;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            transition: all 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--dark);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 4rem 5%;
+            background: rgba(19, 19, 26, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 5%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            animation: fadeInLeft 1s ease;
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-text ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .about-text ul li {
+            padding: 0.8rem 0;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .about-text ul li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .about-image {
+            position: relative;
+            animation: fadeInRight 1s ease;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 6rem 5%;
+            background: rgba(19, 19, 26, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: var(--dark-card);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 5%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .products-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: var(--dark-card);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.3);
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-card p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features {
+            list-style: none;
+            position: relative;
+            z-index: 1;
+            margin: 1.5rem 0;
+        }
+
+        .product-features li {
+            padding: 0.5rem 0;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .product-features li::before {
+            content: '→';
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .coming-soon {
+            opacity: 0.8;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            background: var(--primary);
+            color: var(--dark);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 5%;
+            background: rgba(19, 19, 26, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--dark-card);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+
+        /* Technologies */
+        .technologies {
+            padding: 6rem 5%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+        }
+
+        .tech-item {
+            background: var(--dark-card);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+        }
+
+        .tech-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .tech-item span {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .tech-item p {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .tech-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+        }
+
+        .tech-item {
+            background: var(--dark-card);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+        }
+
+        .tech-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .tech-item span {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .tech-item p {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 6rem 5%;
+            background: rgba(19, 19, 26, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-steps {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            min-width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 5%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--dark-card);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-dim);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .author-info h5 {
+            color: var(--text);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 6rem 5%;
+            background: rgba(19, 19, 26, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .team-card {
+            background: var(--dark-card);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.4s;
+        }
+
+        .team-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.2);
+        }
+
+        .team-member-photo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .team-card h4 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card .role {
+            color: var(--text);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .team-card .bio {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-social {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .team-social a {
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .team-social a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            color: var(--text-dim);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 5%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-item-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 0.2rem;
+        }
+
+        .contact-item-content h4 {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item-content p {
+            color: var(--text-dim);
+        }
+
+        .contact-form-container {
+            background: var(--dark-card);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 5% 2rem;
+            background: var(--dark-card);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-dim);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-dim);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+            font-weight: bold;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .products-grid,
+            .services-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    <div class="stars" id="stars"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <span>⚡</span> Aentia.ai
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Intelligence Meets Innovation</h1>
+            <p class="subtitle">Empowering Businesses with Next-Generation AI Solutions</p>
+            <p>Transform your organization with cutting-edge artificial intelligence and intelligent IT services that
+                drive exponential growth, optimize operations, and unlock unprecedented competitive advantages in the
+                digital age.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Start Your AI Journey</a>
+                <a href="#products" class="btn btn-secondary">Explore Solutions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>99%</h3>
+                <p>Client Satisfaction</p>
+            </div>
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>AI Models Deployed</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Support Available</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Data Security</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Aentia.ai</h2>
+        <p class="section-subtitle">Building the Future of Intelligent Business Solutions</p>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Pioneering AI Excellence Since Day One</h3>
+                <p>Born from a vision to democratize artificial intelligence, Aentia.ai emerged as a beacon of
+                    innovation in the rapidly evolving tech landscape. We believe that transformative AI capabilities
+                    should be accessible to every organization, regardless of size or industry.</p>
+                <p>Our journey began with a fundamental question: What if technology could truly understand, adapt to,
+                    and anticipate human needs? Today, we're answering that question through intelligent solutions that
+                    seamlessly blend with traditional IT services, creating a harmonious ecosystem of innovation.</p>
+                <p>From revolutionizing temple management systems to building enterprise-grade AI platforms, we're
+                    crafting tools that don't just solve problems—they anticipate them. Our multidisciplinary team of
+                    visionaries, data scientists, engineers, and strategists work tirelessly to push the boundaries of
+                    what's possible.</p>
+                <ul>
+                    <li>Deep expertise in machine learning and neural networks</li>
+                    <li>Proven track record in AI implementation across industries</li>
+                    <li>Commitment to ethical AI development and deployment</li>
+                    <li>Agile methodology for rapid innovation and iteration</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+                    alt="AI Technology and Innovation">
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <h2 class="section-title">Why Choose Aentia.ai</h2>
+        <p class="section-subtitle">Excellence in Every Solution We Deliver</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h4>Tailored Solutions</h4>
+                <p>Custom AI strategies designed specifically for your business challenges, ensuring maximum ROI and
+                    seamless integration with existing systems.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h4>Cutting-Edge Technology</h4>
+                <p>Leveraging the latest advancements in AI, machine learning, and deep learning to keep you ahead of
+                    the competition.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h4>Enterprise Security</h4>
+                <p>Bank-grade security protocols and compliance standards to protect your sensitive data and
+                    intellectual property.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h4>Rapid Deployment</h4>
+                <p>Agile development methodologies ensure quick time-to-market without compromising on quality or
+                    performance.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h4>Expert Team</h4>
+                <p>World-class AI researchers, engineers, and consultants with decades of combined experience in
+                    technology innovation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h4>Scalable Architecture</h4>
+                <p>Future-proof solutions that grow with your business, from startup to enterprise scale without
+                    architectural overhaul.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2 class="section-title">Our Products</h2>
+        <p class="section-subtitle">Innovative Solutions Powered by Artificial Intelligence</p>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🕉️</div>
+                <h3>Mydhilyam</h3>
+                <p>Revolutionary AI-powered temple management ecosystem that transforms how religious institutions
+                    operate. Streamline every aspect of temple administration with intelligent automation and
+                    data-driven insights.</p>
+                <ul class="product-features">
+                    <li>Smart donation management and transparent tracking</li>
+                    <li>Automated event scheduling and devotee notifications</li>
+                    <li>Digital darshan booking and crowd management</li>
+                    <li>Inventory management for prasadam and pooja items</li>
+                    <li>Financial reporting and compliance automation</li>
+                    <li>Multi-language support for global accessibility</li>
+                </ul>
+                <span class="badge">Available Now</span>
+            </div>
+            <div class="product-card coming-soon">
+                <div class="product-icon">🤖</div>
+                <h3>AI Assistant Suite</h3>
+                <p>Next-generation conversational AI platform that understands context, learns from interactions, and
+                    delivers personalized experiences across multiple channels.</p>
+                <ul class="product-features">
+                    <li>Natural language processing and understanding</li>
+                    <li>Multi-modal interaction capabilities</li>
+                    <li>Industry-specific knowledge domains</li>
+                    <li>Seamless CRM and ERP integration</li>
+                </ul>
+                <span class="badge">Coming Q2 2025</span>
+            </div>
+            <div class="product-card coming-soon">
+                <div class="product-icon">📊</div>
+                <h3>Predictive Analytics Platform</h3>
+                <p>Advanced machine learning platform that turns your data into actionable predictions, helping you make
+                    informed decisions before opportunities pass.</p>
+                <ul class="product-features">
+                    <li>Real-time data processing and analysis</li>
+                    <li>Customizable prediction models</li>
+                    <li>Interactive visualization dashboards</li>
+                    <li>Automated insight generation</li>
+                </ul>
+                <span class="badge">Coming Q3 2025</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive IT Solutions for Modern Businesses</p>
+        <div class="services-container">
+            <!-- AI-Powered Services -->
+            <div class="service-category">
+                <h3 class="category-title"><span>🤖</span> AI-Powered Services</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🧠</div>
+                        <h4>Machine Learning Solutions</h4>
+                        <p>Custom ML models for predictive analytics, pattern recognition, and intelligent automation
+                            tailored to your specific business needs.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💬</div>
+                        <h4>Natural Language Processing</h4>
+                        <p>Advanced NLP solutions for sentiment analysis, chatbots, document processing, and
+                            multilingual content understanding.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">👁️</div>
+                        <h4>Computer Vision</h4>
+                        <p>Image recognition, object detection, facial recognition, and visual quality control systems
+                            for industrial applications.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎯</div>
+                        <h4>AI Strategy Consulting</h4>
+                        <p>Strategic roadmap development for AI adoption, identifying opportunities, and creating
+                            implementation plans aligned with business goals.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔄</div>
+                        <h4>Process Automation</h4>
+                        <p>Intelligent automation of repetitive tasks using RPA combined with AI for enhanced
+                            decision-making capabilities.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📈</div>
+                        <h4>Data Science & Analytics</h4>
+                        <p>Transform raw data into actionable insights with advanced statistical analysis,
+                            visualization, and predictive modeling.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Traditional IT Services -->
+            <div class="service-category">
+                <h3 class="category-title"><span>💻</span> Traditional IT Services</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h4>Comprehensive IT Solutions</h4>
+                        <p>End-to-end IT services including custom software development, web and mobile applications,
+                            cloud infrastructure management, cybersecurity, IT consulting, and digital transformation.
+                            We deliver scalable, secure, and high-performance solutions using modern technologies and
+                            industry best practices to support your business growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <h2 class="section-title">Our Process</h2>
+        <p class="section-subtitle">A Proven Methodology for Success</p>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>Discovery & Analysis</h4>
+                    <p>We dive deep into understanding your business challenges, goals, and existing infrastructure.
+                        Through comprehensive workshops and stakeholder interviews, we identify opportunities for AI
+                        integration and process optimization.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>Strategy & Planning</h4>
+                    <p>Based on our findings, we develop a detailed roadmap with clear milestones, timelines, and
+                        success metrics. Our team creates technical specifications and architecture designs aligned with
+                        your business objectives.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>Development & Implementation</h4>
+                    <p>Using agile methodologies, we build and test your solution in iterative sprints. This allows for
+                        continuous feedback, rapid adjustments, and ensures the final product exceeds expectations.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>Deployment & Training</h4>
+                    <p>We handle seamless deployment to production environments with minimal disruption. Our team
+                        provides comprehensive training to ensure your staff can leverage the new system effectively.
+                    </p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h4>Support & Optimization</h4>
+                    <p>Our relationship doesn't end at launch. We provide ongoing support, performance monitoring, and
+                        continuous optimization to ensure your solution evolves with your business needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">Success Stories from Industry Leaders</p>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">Aentia.ai transformed our temple operations completely. The Mydhilyam system
+                    has streamlined our donation tracking and devotee management beyond our expectations. Their AI
+                    expertise is truly remarkable.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">R</div>
+                    <div class="author-info">
+                        <h5>Rajesh Kumar</h5>
+                        <p>Temple Administrator</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">Working with Aentia.ai was a game-changer for our business. Their AI
+                    solutions helped us automate 60% of our operations, resulting in significant cost savings and
+                    improved efficiency.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">P</div>
+                    <div class="author-info">
+                        <h5>Priya Sharma</h5>
+                        <p>Operations Director</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">The team at Aentia.ai delivered beyond expectations. Their technical
+                    expertise combined with excellent communication made the entire project smooth and successful.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">A</div>
+                    <div class="author-info">
+                        <h5>Arun Menon</h5>
+                        <p>CTO, Tech Startup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet The Team -->
+    <section class="team">
+        <h2 class="section-title">Meet Our Team</h2>
+        <p class="section-subtitle">The Minds Behind Innovation</p>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-member-photo">
+                    <div class="photo-placeholder">JD</div>
+                </div>
+                <h4>John Doe</h4>
+                <p class="role">Chief Executive Officer</p>
+                <p class="bio">Visionary leader with 15+ years in AI and technology innovation, driving strategic growth
+                    and transformation.</p>
+                <div class="team-social">
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-member-photo">
+                    <div class="photo-placeholder">SK</div>
+                </div>
+                <h4>Sarah Kim</h4>
+                <p class="role">Chief Technology Officer</p>
+                <p class="bio">ML expert and innovator, leading our technical architecture and AI research initiatives
+                    with cutting-edge solutions.</p>
+                <div class="team-social">
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="GitHub">💻</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-member-photo">
+                    <div class="photo-placeholder">MP</div>
+                </div>
+                <h4>Michael Patel</h4>
+                <p class="role">Head of AI Research</p>
+                <p class="bio">Ph.D. in Computer Science, specializing in deep learning and neural networks with 50+
+                    published papers.</p>
+                <div class="team-social">
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-member-photo">
+                    <div class="photo-placeholder">EJ</div>
+                </div>
+                <h4>Emily Johnson</h4>
+                <p class="role">Lead Product Designer</p>
+                <p class="bio">UX/UI expert creating intuitive interfaces that make AI accessible and delightful for
+                    users worldwide.</p>
+                <div class="team-social">
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Dribbble">🎨</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-member-photo">
+                    <div class="photo-placeholder">RC</div>
+                </div>
+                <h4>Raj Chandra</h4>
+                <p class="role">Senior Software Engineer</p>
+                <p class="bio">Full-stack developer with expertise in scalable architectures and cloud-native
+                    applications.</p>
+                <div class="team-social">
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="GitHub">💻</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-member-photo">
+                    <div class="photo-placeholder">LW</div>
+                </div>
+                <h4>Lisa Wang</h4>
+                <p class="role">Data Science Lead</p>
+                <p class="bio">Analytics expert transforming complex data into actionable insights and predictive
+                    models.</p>
+                <div class="team-social">
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let's discuss how AI can revolutionize your operations and drive unprecedented growth</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+                <a href="#products" class="btn btn-secondary">View Our Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Let's Start Building the Future Together</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div class="contact-item-content">
+                            <h4>Email</h4>
+                            <p>hello@aentia.ai</p>
+                            <p>support@aentia.ai</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div class="contact-item-content">
+                            <h4>Phone</h4>
+                            <p>+91 (XXX) XXX-XXXX</p>
+                            <p>Mon-Fri, 9:00 AM - 6:00 PM IST</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div class="contact-item-content">
+                            <h4>Location</h4>
+                            <p>Alappuzha, Kerala</p>
+                            <p>India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="GitHub">💻</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                </div>
+            </div>
+            <div class="contact-form-container">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="How can we help?" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Tell us about your project..." required></textarea>
+                </div>
+                <button class="btn btn-primary submit-btn">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Aentia.ai</h4>
+                <p>Pioneering AI-powered solutions for the modern world. Transforming businesses through intelligent
+                    technology and innovation.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#products">Products</a>
+                <a href="#services">Services</a>
+            </div>
+            <div class="footer-section">
+                <h4>Products</h4>
+                <a href="#products">Mydhilyam</a>
+                <a href="#products">AI Assistant Suite</a>
+                <a href="#products">Analytics Platform</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Aentia.ai. All rights reserved. | Crafted with AI & Innovation</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <script>
+        // Generate stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll to top button
+        const scrollTop = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card, .service-card, .feature-card, .testimonial-card, .process-step, .team-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Form submission
+        document.querySelector('.submit-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && subject && message) {
+                alert('Thank you for your message! We will get back to you soon.');
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('subject').value = '';
+                document.getElementById('message').value = '';
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+        // Counter animation for stats
+        const animateCounter = (element, target) => {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + (element.textContent.includes('%') ? '%' : '+');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + (element.textContent.includes('%') ? '%' : '+');
+                }
+            }, 20);
+        };
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    const h3 = entry.target.querySelector('h3');
+                    const text = h3.textContent;
+                    const number = parseInt(text);
+                    h3.textContent = '0' + (text.includes('%') ? '%' : '+');
+                    animateCounter(h3, number);
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-item').forEach(item => {
+            statsObserver.observe(item);
+        });
+    </script>
+</body>
+
+</html>
